@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grandesite · Cardápio Digital</title>
+  
+  <!-- CSS do Bootstrap via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons (opcional, para ícones bonitos) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Estilo personalizado mínimo (apenas para ajustes específicos) -->
+  <style>
+    /* garante que todas as imagens dos cards tenham o mesmo tamanho */
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+      width: 100%;
+    }
+    
+    /* evita que a navbar fixa cubra o conteúdo ao clicar nos links âncora */
+    html {
+      scroll-padding-top: 76px;
+      scroll-behavior: smooth;
+    }
+    
+    /* remove qualquer barra de rolagem horizontal indesejada */
+    body {
+      overflow-x: hidden;
+    }
+    
+    /* botão personalizado leve */
+    .btn-order {
+      transition: all 0.2s ease;
+    }
+    .btn-order:hover {
+      transform: scale(1.02);
+    }
+    
+    /* rodapé com ícones sociais */
+    .social-icon {
+      transition: opacity 0.2s;
+    }
+    .social-icon:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body class="bg-light">
+  
+  <!-- ===================== 1. NAVEGAÇÃO DINÂMICA ===================== -->
+  <!-- Navbar escura (dark) fixa no topo (fixed-top) com links internos -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">
+        <i class="bi bi-cup-straw"></i> Grandesite
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Alternar navegação">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarMenu">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" href="#entradas">Entradas</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#principais">Pratos Principais</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobremesas">Sobremesas</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Mais Opções
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+              <li><a class="dropdown-item" href="#porcoes">Porções</a></li>
+              <li><a class="dropdown-item" href="#bebidas">Bebidas</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#footer">Horário & Endereço</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- ===================== 2. BANNER DE DESTAQUE (HEADER) ===================== -->
+  <!-- Fundo escuro contrastante, texto centralizado e espaçamento vertical -->
+  <header class="bg-dark text-white text-center py-5 mt-5">
+    <div class="container py-4">
+      <h1 class="display-4 fw-bold">🍽️ Cardápio Digital</h1>
+      <p class="lead">Sabores que combinam com você! Experimente nossos destaques.</p>
+      <div class="mt-3">
+        <span class="badge bg-warning text-dark fs-6 p-2">🔥 Destaque da Casa</span>
+        <span class="badge bg-success fs-6 p-2 ms-2">🌱 Opções Veganas</span>
+      </div>
+    </div>
+  </header>
+  
+  <main class="container my-5">
+    
+    <!-- ===================== SEÇÃO: ENTRADAS ===================== -->
+    <section id="entradas" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center border-bottom border-danger border-2 pb-2 mb-4">
+        <h2 class="fw-bold"><i class="bi bi-egg-fried"></i> Entradas</h2>
+        <span class="badge bg-secondary">Para começar bem</span>
+      </div>
+      
+      <!-- Grid responsivo: celular 1 item (col-12), tablet 2 itens (col-md-6), desktop 3 itens (col-lg-4) -->
+      <div class="row g-4">
+        <!-- Card 1 - Entrada -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/FFE0B5/8B5A2B?text=Bruschetta" class="card-img-top rounded-top-4" alt="Bruschetta">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start">
+                <h5 class="card-title fw-bold">Bruschetta Tradizionale</h5>
+                <span class="badge bg-success">Vegano</span>
+              </div>
+              <p class="card-text text-muted">Pão italiano tostado, tomates frescos, manjericão e azeite extra virgem.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 22,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir <i class="bi bi-cart-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 2 - Entrada -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/FDE2C4/8B5A2B?text=Pastel+Forno" class="card-img-top rounded-top-4" alt="Pastel de Forno">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Pastéis de Forno (3 unid)</h5>
+                <span class="badge bg-warning text-dark">Destaque</span>
+              </div>
+              <p class="card-text text-muted">Massa leve recheada com frango com catupiry ou queijo com tomate.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 28,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir <i class="bi bi-cart-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card 3 - Entrada -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/FFD966/664D00?text=Coxinhas" class="card-img-top rounded-top-4" alt="Coxinhas">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Cesta de Coxinhas</h5>
+              <p class="card-text text-muted">6 unidades artesanais: frango com requeijão, carne seca e provolone.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 32,50</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir <i class="bi bi-cart-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===================== SEÇÃO: PRATOS PRINCIPAIS ===================== -->
+    <section id="principais" class="mb-5">
+      <div class="d-flex justify-content-between align-items-center border-bottom border-danger border-2 pb-2 mb-4">
+        <h2 class="fw-bold"><i class="bi bi-burger"></i> Pratos Principais</h2>
+        <span class="badge bg-danger">Os mais pedidos</span>
+      </div>
+      
+      <div class="row g-4">
+        <!-- Lanche X-Burger -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/EDBB99/6B3E1B?text=X-Burger" class="card-img-top rounded-top-4" alt="X-Burger">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">X-Burger</h5>
+                <span class="badge bg-warning text-dark">Top 3</span>
+              </div>
+              <p class="card-text text-muted">Pão brioche, blend 150g, queijo cheddar, alface, tomate e maionese da casa.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 29,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- X-Salada -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/F0C0A8/7B3F00?text=X-Salada" class="card-img-top rounded-top-4" alt="X-Salada">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">X-Salada Premium</h5>
+              <p class="card-text text-muted">Hambúrguer de costela, queijo prato, alface, tomate, cebola roxa e molho especial.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 34,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- X-Egg -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/F7D8B6/6B3E1B?text=X-Egg" class="card-img-top rounded-top-4" alt="X-Egg">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">X-Egg</h5>
+              <p class="card-text text-muted">Burger, ovo frito, queijo mussarela, bacon crocante e salada.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 32,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- X-Calabresa -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/E6C28F/865D2E?text=X-Calabresa" class="card-img-top rounded-top-4" alt="X-Calabresa">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">X-Calabresa</h5>
+              <p class="card-text text-muted">Hambúrguer de calabresa acebolada, cream cheese, rúcula e molho barbecue.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 31,50</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- X-Bacon -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/E6B17E/59381C?text=X-Bacon" class="card-img-top rounded-top-4" alt="X-Bacon">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">X-Bacon Supremo</h5>
+              <p class="card-text text-muted">Dupla de carnes, queijo cheddar, bacon crocante, cebola caramelizada.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 39,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Burger Vegano (Destaque) -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm border-0 rounded-4">
+            <img src="https://placehold.co/600x400/B7C9A2/2D4A22?text=Burger+Vegano" class="card-img-top rounded-top-4" alt="Burger Vegano">
+            <div class="card-body">
+              <div class="d-flex justify-content-between">
+                <h5 class="card-title fw-bold">Burger Vegano</h5>
+                <span class="badge bg-success">🌱 Vegano</span>
+              </div>
+              <p class="card-text text-muted">Grão-de-bico, beterraba, alface, tomate seco e molho de mostarda.</p>
+              <div class="d-flex justify-content-between align-items-center mt-3">
+                <strong class="fs-4 text-success">R$ 33,90</strong>
+                <button class="btn btn-danger btn-sm rounded-pill btn-order">Pedir</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===================== SEÇÃO: PORÇÕES ===================== -->
+    <section id="porcoes" class="mb-5">
+      <div class="d-flex align-items-center gap-2 border-bottom border-warning pb-2 mb-4">
+        <h3 class="fw-bold"><i class="bi bi-grid-3x3-gap-fill"></i> Porções</h3>
+        <span class="badge bg-secondary">Para compartilhar</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://placehold.co/600x400/F7DC6F/A0522D?text=Fritas" class="card-img-top" alt="Batata Frita">
+            <div class="card-body">
+              <h5 class="card-title">Batata Frita Especial</h5>
+              <p class="card-text text-muted">Porção crocante com cheddar e bacon ou apenas sal.</p>
+              <strong class="text-success fs-5">R$ 19,90</strong>
+              <div class="mt-2"><button class="btn btn-outline-danger btn-sm rounded-pill">Pedir</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://placehold.co/600x400/D2B48C/6B3A1F?text=Mandioca" class="card-img-top" alt="Mandioca">
+            <div class="card-body">
+              <h5 class="card-title">Mandioca Frita</h5>
+              <p class="card-text text-muted">Acompanha molho de alho e pimenta.</p>
+              <strong class="text-success fs-5">R$ 22,90</strong>
+              <div class="mt-2"><button class="btn btn-outline-danger btn-sm rounded-pill">Pedir</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://placehold.co/600x400/E97451/8B3A1A?text=Calabresa" class="card-img-top" alt="Calabresa">
+            <div class="card-body">
+              <h5 class="card-title">Calabresa Acebolada</h5>
+              <p class="card-text text-muted">300g de calabresa fatiada, cebola e orégano.</p>
+              <strong class="text-success fs-5">R$ 28,50</strong>
+              <div class="mt-2"><button class="btn btn-outline-danger btn-sm rounded-pill">Pedir</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://placehold.co/600x400/E3B778/AA6F39?text=Misto" class="card-img-top" alt="Misto">
+            <div class="card-body">
+              <h5 class="card-title">Misto de Frios</h5>
+              <p class="card-text text-muted">Salame, queijo, azeitona e pão sírio.</p>
+              <strong class="text-success fs-5">R$ 25,90</strong>
+              <div class="mt-2"><button class="btn btn-outline-danger btn-sm rounded-pill">Pedir</button></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 shadow-sm">
+            <img src="https://placehold.co/600x400/FFB347/6F4E2E?text=Frango" class="card-img-top" alt="Frango">
+            <div class="card-body">
+              <h5 class="card-title">Frango à Passarinho</h5>
+              <p class="card-text text-muted">Em pedaços crocantes com limão e alho.</p>
+              <strong class="text-success fs-5">R$ 32,90</strong>
+              <div class="mt-2"><button class="btn btn-outline-danger btn-sm rounded-pill">Pedir</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===================== SEÇÃO: BEBIDAS ===================== -->
+    <section id="bebidas" class="mb-5">
+      <div class="d-flex align-items-center gap-2 border-bottom border-info pb-2 mb-4">
+        <h3 class="fw-bold"><i class="bi bi-cup-straw"></i> Bebidas</h3>
+        <span class="badge bg-primary">Geladíssimas</span>
+      </div>
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card text-center p-2 shadow-sm h-100">
+            <i class="bi bi-cup-straw fs-1 text-danger"></i>
+            <div class="card-body p-2">
+              <h6>Refrigerante Lata</h6>
+              <span class="text-success fw-bold">R$ 8,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card text-center p-2 shadow-sm h-100">
+            <i class="bi bi-droplet fs-1 text-primary"></i>
+            <div class="card-body p-2">
+              <h6>Suco Natural</h6>
+              <span class="text-success fw-bold">R$ 12,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card text-center p-2 shadow-sm h-100">
+            <i class="bi bi-wine fs-1" style="color:#b83b5e;"></i>
+            <div class="card-body p-2">
+              <h6>Drink Coquetel</h6>
+              <span class="text-success fw-bold">R$ 18,90</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="card text-center p-2 shadow-sm h-100">
+            <i class="bi bi-cup-hot fs-1 text-warning"></i>
+            <div class="card-body p-2">
+              <h6>Café Especial</h6>
+              <span class="text-success fw-bold">R$ 7,50</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===================== SEÇÃO: SOBREMESAS ===================== -->
+    <section id="sobremesas" class="mb-5">
+      <div class="d-flex border-bottom border-secondary pb-2 mb-4">
+        <h3 class="fw-bold"><i class="bi bi-cake2"></i> Sobremesas</h3>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://placehold.co/600x400/F4C2C2/8B3A3A?text=Petit+Gâteau" class="card-img-top" alt="Petit Gateau">
+            <div class="card-body">
+              <h5 class="card-title">Petit Gâteau</h5>
+              <p class="card-text">Bolo de chocolate com recheio derretido + sorvete de creme.</p>
+              <strong class="text-success fs-5">R$ 19,90</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://placehold.co/600x400/FFDEAD/D2691E?text=Pudim" class="card-img-top" alt="Pudim">
+            <div class="card-body">
+              <h5 class="card-title">Pudim Caseiro</h5>
+              <p class="card-text">Leite condensado, calda de caramelo.</p>
+              <strong class="text-success fs-5">R$ 12,00</strong>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card shadow-sm h-100">
+            <img src="https://placehold.co/600x400/E6C280/8B5A2B?text=Torta+Limão" class="card-img-top" alt="Torta de Limão">
+            <div class="card-body">
+              <h5 class="card-title">Torta de Limão</h5>
+              <p class="card-text">Mousse de limão, merengue e massa crocante.</p>
+              <strong class="text-success fs-5">R$ 14,90</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <!-- ===================== 5. RODAPÉ (FOOTER) ===================== -->
+  <!-- Fundo escuro (bg-dark) com horário de funcionamento e endereço -->
+  <footer id="footer" class="bg-dark text-white pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-md-5">
+          <h5 class="fw-bold text-uppercase"><i class="bi bi-shop"></i> Grandesite</h5>
+          <p class="text-white-50">Sabor e tradição que transformam momentos em memórias deliciosas.</p>
+          <div class="d-flex gap-3">
+            <a href="#" class="text-white social-icon"><i class="bi bi-instagram fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="bi bi-facebook fs-4"></i></a>
+            <a href="#" class="text-white social-icon"><i class="bi bi-whatsapp fs-4"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6><i class="bi bi-clock-history"></i> Horário de Funcionamento</h6>
+          <ul class="list-unstyled text-white-50">
+            <li>Terça a Domingo: 18h às 23h</li>
+            <li>Sexta e Sábado: 18h à 00h</li>
+            <li>Delivery: até 23h30</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6><i class="bi bi-geo-alt-fill"></i> Endereço</h6>
+          <address class="text-white-50">
+            Rua do Sabor, 1000 - Centro<br>
+            Cidade Gastronômica - SP<br>
+            <i class="bi bi-envelope"></i> contato@grandesite.com.br<br>
+            <i class="bi bi-telephone"></i> (11) 99999-8888
+          </address>
+        </div>
+      </div>
+      <hr class="bg-secondary mt-3">
+      <div class="text-center text-white-50 small">
+        &copy; 2026 Cardápio Digital - Grandesite | Todos os sabores reservados.
+      </div>
+    </div>
+  </footer>
+  
+  <!-- JavaScript do Bootstrap via CDN (necessário para menu hambúrguer e dropdown) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
